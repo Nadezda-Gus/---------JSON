@@ -73,7 +73,13 @@
         <form id="book-form">
             <input type="hidden" name="id" />
             <input name="title" placeholder="Название" required />
-            <input name="author" placeholder="Автор"
+            <input name="author" placeholder="Автор" required />
+            <input name="genre" placeholder="Жанр" />
+            <input name="year" type="number" placeholder="Год" />
+            <input name="rating" type="number" step="0.1" placeholder="Рейтинг" />
+            <button type="submit">Сохранить</button>
         </form>
+
+        <script type="module" scr="app.js"></script>
     </body>
 </html>
