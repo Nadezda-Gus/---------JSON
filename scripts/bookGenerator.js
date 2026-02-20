@@ -11,7 +11,6 @@ function randomItem(arr) {
 }
         export async function generateBooks(count = 10) {
 for (let attemp = 0; attemp <5; attempt++) {
-
         const subject = randomItem(SUBJECTS);
         const url = `https://openlibrary.org/subjects/${subject}.jsom?limit=50`;
 
