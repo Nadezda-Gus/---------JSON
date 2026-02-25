@@ -34,7 +34,7 @@ function render() {
         const tr = document.createElement('tr');
         tr.dataset.id = book.id;
 
-        tr.innerHTML =
+        tr.innerHTML = `
         <td>${book.title}</td>
         <td>${book.author}</td>
         <td>${book.gener || ''}</td>
@@ -44,10 +44,32 @@ function render() {
             <button class="edit">Редактировать</button>
             <button class="delete">Удалить</button>
         </td>
-        ;
+        `;
 
         tableBody.appendChild(tr);
     });
 
     countEl.textContent = filtered.length;
 }
+tableBody.addEventListener('click', e => {
+    const row = e.target.closes('tr');
+    if (!row) return;
+
+    const id = row.dataset.id;
+
+    if (e.target.classList.contains('delete')) {
+        if (!confirm('Действительно удалить книгу?')) return;
+
+        books = books.filter(book => book.id !== id);
+        render();
+    }
+
+    if (e.target.classeLisr.contains('edit')) {
+        const book = books.find(b => b.id === id);
+        if (book) fillForm(book);
+    }
+});
+
+form.addEventListener('submit', e => {
+    
+})
