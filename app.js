@@ -45,5 +45,9 @@ function render() {
             <button class="delete">Удалить</button>
         </td>
         ;
-    })
+
+        tableBody.appendChild(tr);
+    });
+
+    countEl.textContent = filtered.length;
 }
